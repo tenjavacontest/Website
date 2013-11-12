@@ -15,52 +15,47 @@
 				margin: 0px;
 			}
 
+			html, body, .column {
+				height: 100%;
+			}
+
 			body {
-				background: #FFF;
 				font-family: "Open Sans", sans-serif;
 				font-size: 20px;
 				font-weight: 300;
-			}
-
-			div#alert {
 				color: #FFF;
-				background: #3693ea;
-				padding: 15px 0px;
-				text-align: center;
 			}
 
-			div.wrapper {
-				width: 660px;
-				overflow: auto;
-				margin: 10px auto;
+			a {
+				color: #FFF;
 			}
 
-			div.column {
-				width: 300px;
-				padding: 0px 15px;
-				float: left;
-				display: inline;
-			}
-
-			div.column a {
-				color: #3693ea;
-			}
-
-			div.column a:hover {
+			a:hover {
 				text-decoration: none;
 			}
 
-			div.column.title {
-				width: 250px;
-				text-align: right;
+			.column {
+				width: 20%;
+				min-width: 100px;
+				float: left;
+				display: inline;
+				text-align: center;
 			}
 
-			p.larger {
-				font-size: 26px;
+			.column p {
+				margin-top: 250px;
 			}
 
-			b {
-				font-weight: 400;
+			.darkest {
+				background: #175F8F;
+			}
+
+			.bright {
+				background: #3498db;
+			}
+
+			.dark {
+				background: #1A78B8;
 			}
 
 		</style>
@@ -69,62 +64,34 @@
 
 	<body>
 
-		<div id="alert">
+		<div class="column bright">
 
-			<p class="larger"><b>ten.java Plugin Content</b></p>
-			Theme: Coming soon.
-
-		</div>
-
-		<div class="wrapper">
-
-			<div class="column title">
-
-				<b>Links</b>
-
-			</div>
-
-			<div class="column">
-
+			<p>
+				<b>Links</b><br />
 				<a href="http://github.com/tenjavacontest">Github</a> (tenjavacontest)<br />
 				<a href="http://forums.bukkit.org/threads/ten-java-plugin-contest-irc-esper-net-ten-java-pool-1-315.190553/">Thread</a><br />
 				<a href="http://webchat.esper.net/?nick=tenjava...&channels=ten.java&prompt=1">IRC</a> (irc.esper.net #ten.java)<br />
 				<a href="https://docs.google.com/document/d/1vBadA687VEPMtj_tI6aEFV_0cQzwz15jF0SHqbf-fKk/edit">Maven Tutorial</a>
-
-			</div>
+			</p>
 
 		</div>
 
-		<div class="wrapper">
+		<div class="column dark">
 
-			<div class="column title">
-
-				<b>Overview</b>
-
-			</div>
-
-			<div class="column">
-
+			<p>
+				<b>Overview</b><br />
 				Pool: $100.50<br />
 				Date: December 7th 2013<br />
 				Participants: 37<br />
 				Judges: 6
-
-			</div>
+			</p>
 
 		</div>
 
-		<div class="wrapper">
+		<div class="column darkest">
 
-			<div class="column title">
-
-				<b>Donators</b>
-				<p style="font-size: 16px;">(Thanks!)</p>
-
-			</div>
-
-			<div class="column">
-
+			<p>
+				<b>Donators</b><br />
 				blablubbabc: 500<br />
 				lol768: 250<br />
 				zachbora: 250<br />
@@ -140,21 +107,14 @@
 				Chinwe: 15<br />
 				MineOCraftMC: 13<br />
 				chaseoes: 10
-
-			</div>
+			</p>
 
 		</div>
 
-		<div class="wrapper">
+		<div class="column dark">
 
-			<div class="column title">
-
-				<b>Streams</b>
-
-			</div>
-
-			<div class="column">
-
+			<p>
+				<b>Streams</b><br />
 				<a href="http://www.twitch.tv/MrDeveloperK/">number1_Master</a><br />
 				<a href="http://twitch.tv/zeusallmighty11">zeusallmighty11</a><br />
 				<a href="http://twitch.tv/vilsol">Vilsol</a><br />
@@ -164,30 +124,21 @@
 				<a href="http://www.twitch.tv/horrgs">iiHeroo</a><br />
 				<a href="http://www.twitch.tv/chasechocolate">chasechocolate</a><br />
 				<a href="http://twitch.tv/geNAZt">getNAZt</a>
-
-			</div>
+			</p>
 
 		</div>
 
-		<div class="wrapper">
+		<div class="column bright">
 
-			<div class="column title">
-
-				<b>Judges</b>
-				<p style="font-size: 8px;">(Bribe these people.)</p>
-
-			</div>
-
-			<div class="column">
-
+			<p>
+				<b>Judges</b><br />
 				toothplck1<br />
 				drtshock<br />
 				lol768<br />
 				gomeow<br />
 				nkrecklow<br />
 				hawkfalcon
-
-			</div>
+			</p>
 
 		</div>
 
