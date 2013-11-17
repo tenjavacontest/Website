@@ -1,4 +1,4 @@
 Website
 =======
 
-Website used for the contest.
+Website (http://kreckin.com/tenjava) used for the contest.
