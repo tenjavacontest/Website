@@ -93,17 +93,22 @@
 
 	<body>
 		<div id="alert">
+
 			<div class="section">
 				4,489 points
 			</div>
+
 			<div class="section main">
 				<p>ten.java Plugin Contest</p>
 				Theme: To be announced
 			</div>
+
 			<div id="timer" class="section">
 				00d 00h 00m 00s
 			</div>
+
 		</div>
+		
 		<div class="column">
 
 			<p>
@@ -202,19 +207,27 @@
 			Thanks to all the wonderful people who made this contest possible!
 
 		</div>
+
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment.min.js"></script>
-		<script>
+
+		<script type="text/javascript">
+
 			var date = moment("December 7 2013");
+
 			function updateTime() {
 				var now = moment();
 				var days = date.diff(now, "days");
 				var hours = date.diff(now.add("days", days), "hours");
 				var minutes = date.diff(now.add("hours", hours), "minutes");
 				var seconds = date.diff(now.add("minutes", minutes), "seconds");
+
 				document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
 			};
+
 			window.setInterval(updateTime, 1000);
+
 			updateTime();
+
 		</script>
 
 	</body>
