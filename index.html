@@ -72,8 +72,19 @@
 				background: #1A78B8;
 			}
 			
-			div#alert > p {
+			div#alert p {
 				font-size: 26px;
+			}
+
+			#alert > .section {
+				float:left;
+				width:20%;
+				margin-top:20px;
+			}
+
+			#alert > .section.main {
+				width:60%;
+				margin:0;
 			}
 
 		</style>
@@ -81,24 +92,28 @@
 	</head>
 
 	<body>
-
 		<div id="alert">
-
-			<p>ten.java Plugin Contest</p>
-			Theme: To be announced
-
+			<div class="section">
+				4,489 points
+			</div>
+			<div class="section main">
+				<p>ten.java Plugin Contest</p>
+				Theme: To be announced
+			</div>
+			<div id="timer" class="section">
+				00d 00h 00m 00s
+			</div>
 		</div>
-
 		<div class="column">
 
 			<p>
-				<b>Links</b><br />
-				<a href="http://github.com/tenjavacontest">Github</a> (tenjavacontest)<br />
-				<a href="http://forums.bukkit.org/threads/ten-java-plugin-contest-irc-esper-net-ten-java-pool-1-315.190553/">Thread</a><br />
-				<a href="http://webchat.esper.net/?nick=tenjava...&channels=ten.java&prompt=1">IRC</a> (irc.esper.net #ten.java)<br />
-				<a href="https://docs.google.com/document/d/1vBadA687VEPMtj_tI6aEFV_0cQzwz15jF0SHqbf-fKk/edit">Maven Tutorial</a><br />
-				<a href="https://docs.google.com/spreadsheet/ccc?key=0AkbN9EcUb__OdHpET0g3SlA5YTJpeVhiSDZiSGJHYVE&usp=sharing">Judging Spreadsheet</a><br />
-				<a href="https://docs.google.com/document/d/1Cr4XjwPSWsUd4f0SF4Mp4EQ8TVSZJkzBDtdrSsl-w3o/edit?usp=sharing">Rules</a>
+				<strong>Links</strong><br />
+				<a href="http://github.com/tenjavacontest" target="_blank">Github</a> (tenjavacontest)<br />
+				<a href="http://forums.bukkit.org/threads/ten-java-plugin-contest-irc-esper-net-ten-java-pool-1-315.190553/" target="_blank">Thread</a><br />
+				<a href="http://webchat.esper.net/?nick=tenjava...&channels=ten.java&prompt=1" target="_blank">IRC</a> (irc.esper.net #ten.java)<br />
+				<a href="https://docs.google.com/document/d/1vBadA687VEPMtj_tI6aEFV_0cQzwz15jF0SHqbf-fKk/edit" target="_blank">Maven Tutorial</a><br />
+				<a href="https://docs.google.com/spreadsheet/ccc?key=0AkbN9EcUb__OdHpET0g3SlA5YTJpeVhiSDZiSGJHYVE&usp=sharing" target="_blank">Judging Spreadsheet</a><br />
+				<a href="https://docs.google.com/document/d/1Cr4XjwPSWsUd4f0SF4Mp4EQ8TVSZJkzBDtdrSsl-w3o/edit?usp=sharing" target="_blank">Rules</a>
 			</p>
 
 		</div>
@@ -106,7 +121,7 @@
 		<div class="column dark">
 
 			<p>
-				<b>Overview</b><br />
+				<strong>Overview</strong><br />
 				Points: 4,489<br />
 				Date: December 7th 2013<br />
 				Participants: 62<br />
@@ -117,8 +132,8 @@
 
 		<div class="column darkest">
 
-			<p>
-				<b>Donators</b><br />
+			<p id="donors">
+				<strong>Donors</strong><br />
 				treestomplz: 800<br />
 				jkcclemens: 755<br />
 				zachbora: 650<br />
@@ -138,7 +153,8 @@
 				Chinwe: 15<br />
 				MineOCraftMC: 13<br />
 				chaseoes: 10<br />
-				evilmidget38: 9
+				evilmidget38: 9<br/>
+				xTrollxDudex: 1
 			</p>
 
 		</div>
@@ -146,23 +162,23 @@
 		<div class="column dark">
 
 			<p>
-				<b>Streams</b><br />
-				<a href="http://www.twitch.tv/MrDeveloperK/">number1_Master</a><br />
-				<a href="http://twitch.tv/zeusallmighty11">zeusallmighty11</a><br />
-				<a href="http://twitch.tv/vilsol">Vilsol</a><br />
-				<a href="http://twitch.tv/chaseoes">chaseoes</a><br />
-				<a href="http://twitch.tv/javadog36/">KeybordPiano459</a><br />
-				<a href="http://twitch.tv/techkinggames">kyledag500</a><br />
-				<a href="http://www.twitch.tv/horrgs">iiHeroo</a><br />
-				<a href="http://www.twitch.tv/chasechocolate">chasechocolate</a><br />
-				<a href="http://twitch.tv/geNAZt">geNAZt</a><br />
-				<a href="http://www.twitch.tv/mncat77">mncat77</a><br />
-				<a href="http://www.twitch.tv/lordzachbora">ZachBora</a><br />
-				<a href="http://twitch.tv/Axe2760">Axe2760</a><br />
-				<a href="http://www.twitch.tv/daboross">daboross</a><br />
-				<a href="http://www.twitch.tv/lindorm_ab">autoit4you</a><br />
-				<a href="http://twitch.tv/Muwbi">Muwbi</a><br />
-				<a href="http://twitch.tv/se1by">se1by</a>
+				<strong>Streams</strong><br />
+				<a href="http://www.twitch.tv/MrDeveloperK/" target="_blank">number1_Master</a><br />
+				<a href="http://twitch.tv/zeusallmighty11" target="_blank">zeusallmighty11</a><br />
+				<a href="http://twitch.tv/vilsol" target="_blank">Vilsol</a><br />
+				<a href="http://twitch.tv/chaseoes" target="_blank">chaseoes</a><br />
+				<a href="http://twitch.tv/javadog36" target="_blank">KeybordPiano459</a><br />
+				<a href="http://twitch.tv/techkinggames" target="_blank">kyledag500</a><br />
+				<a href="http://www.twitch.tv/horrgs" target="_blank">iiHeroo</a><br />
+				<a href="http://www.twitch.tv/chasechocolate" target="_blank">chasechocolate</a><br />
+				<a href="http://twitch.tv/geNAZt" target="_blank">geNAZt</a><br />
+				<a href="http://www.twitch.tv/mncat77" target="_blank">mncat77</a><br />
+				<a href="http://www.twitch.tv/lordzachbora" target="_blank">ZachBora</a><br />
+				<a href="http://twitch.tv/Axe2760" target="_blank">Axe2760</a><br />
+				<a href="http://www.twitch.tv/daboross" target="_blank">daboross</a><br />
+				<a href="http://www.twitch.tv/lindorm_ab" target="_blank">autoit4you</a><br />
+				<a href="http://twitch.tv/Muwbi" target="_blank">Muwbi</a><br />
+				<a href="http://twitch.tv/se1by" target="_blank">se1by</a>
 			</p>
 
 		</div>
@@ -170,7 +186,7 @@
 		<div class="column">
 
 			<p>
-				<b>Judges</b><br />
+				<strong>Judges</strong><br />
 				toothplck1<br />
 				drtshock<br />
 				lol768<br />
@@ -183,9 +199,23 @@
 
 		<div id="footer">
 
-			Thanks to everyone who made this possible!
+			Thanks to all the wonderful people who made this contest possible!
 
 		</div>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment.min.js"></script>
+		<script>
+			var date = moment("December 7 2013");
+			function updateTime() {
+				var now = moment();
+				var days = date.diff(now, "days");
+				var hours = date.diff(now.add("days", days), "hours");
+				var minutes = date.diff(now.add("hours", hours), "minutes");
+				var seconds = date.diff(now.add("minutes", minutes), "seconds");
+				document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+			};
+			window.setInterval(updateTime, 1000);
+			updateTime();
+		</script>
 
 	</body>
 
