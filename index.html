@@ -27,23 +27,6 @@
 				background: #FFF;
 			}
 
-			#footer, #alert {
-				padding: 15px 0px;
-				background: rgba(0, 0, 0, 0.4);
-				width: 100%;
-				text-align: center;
-				position: fixed;
-				left: 0px;
-			}
-
-			#footer {
-				bottom: 0px;
-			}
-
-			#alert {
-				top: 0px;
-			}
-
 			a {
 				color: #FFF;
 			}
@@ -66,16 +49,6 @@
 				margin-bottom: 80px;
 			}
 
-			#alert p {
-				font-size: 26px;
-			}
-
-			#alert > .section {
-				float: left;
-				width: 25%;
-				
-			}
-			
 			.commit {
 				overflow: auto;
 				margin: 0px 25px 15px 25px;
@@ -107,27 +80,7 @@
 
 	<body>
 
-		<div id="alert">
-
-			<div class="section">
-				4,489 points
-			</div>
-			
-			<div class="section">
-				1600 UTC Theme: TBA
-			</div>
-
-			<div class="section">
-				800 UTC Theme: TBA
-			</div>
-
-			<div id="timer" class="section">
-				00d 00h 00m 00s
-			</div>
-
-		</div>
-		
-		<div class="column" style="background: #2ecc71;">
+		<div class="column" style="background: #328F97;">
 
 			<p style="margin-bottom: 40px;">
 				<strong>Links</strong><br />
@@ -150,37 +103,18 @@
 			</p>
 
 		</div>
+		
+		<div class="column" style="background: #37A4AD;">
 
-		<div class="column" style="background: #2980b9;">
-
-			<p id="donors">
-				<strong>Donors</strong><br />
-				treestompz: 800<br />
-				jkcclemens: 755<br />
-				zachbora: 650<br />
-				blablubbabc: 500<br />
-				lol768: 400<br />
-				daboross: 227<br />
-				nkrecklow: 200<br />
-				hawkfalcon: 140<br />
-				chasechocolate: 124<br />
-				kyledag500: 106<br />
-				KeybordPiano459: 100<br />
-				jorisk322: 100<br />
-				gomeow: 97<br />
-				drtshock: 69<br />
-				KrazyTraynz: 47<br />
-				geNAZt: 17<br />
-				Chinwe: 15<br />
-				MineOCraftMC: 13<br />
-				chaseoes: 10<br />
-				evilmidget38: 9<br/>
-				xTrollxDudex: 1
+			<p>
+				<strong>News Feed</strong><br />
+				<a href="javascript:void(0);" onclick="updateNewsFeed();">Refresh</a><br /><br />
+				<span id="newsfeed">Loading...</span>
 			</p>
 
 		</div>
 
-		<div class="column" style="background: #f39c12;">
+		<div class="column" style="background: #3BAEB8;">
 
 			<p>
 				<strong>Streams</strong><br />
@@ -209,29 +143,39 @@
 
 		</div>
 
-		<div class="column" style="background: #c0392b;">
+		<div class="column" style="background: #3FC1CC;">
 
-			<p>
-				<strong>News Feed</strong><br />
-				<a href="javascript:void(0);" onclick="updateNewsFeed();">Refresh</a><br /><br />
-				<span id="newsfeed">Loading...</span>
+			<p id="donors">
+				<strong>Donators</strong><br />
+				treestompz: 800<br />
+				jkcclemens: 755<br />
+				zachbora: 650<br />
+				blablubbabc: 500<br />
+				lol768: 400<br />
+				daboross: 227<br />
+				nkrecklow: 200<br />
+				hawkfalcon: 140<br />
+				chasechocolate: 124<br />
+				kyledag500: 106<br />
+				KeybordPiano459: 100<br />
+				jorisk322: 100<br />
+				gomeow: 97<br />
+				drtshock: 69<br />
+				KrazyTraynz: 47<br />
+				geNAZt: 17<br />
+				Chinwe: 15<br />
+				MineOCraftMC: 13<br />
+				chaseoes: 10<br />
+				evilmidget38: 9<br/>
+				xTrollxDudex: 1
 			</p>
 
 		</div>
 
-		<div id="footer">
-
-			Thanks to all the wonderful people who made this contest possible!
-
-		</div>
-
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment.min.js"></script>
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
 		<script type="text/javascript">
 
-			var date = moment("December 7 2013");
-			var firstLoad = true;
 			var loading = false;
 
 			function updateNewsFeed() {
@@ -241,7 +185,7 @@
 				loading = true;
 				var feed = $("#newsfeed");
 				feed.html("Loading...");
-				$.get("http://tenjava.lol768.com/api/commits?number=3", function(data) {
+				$.get("http://tenjava.lol768.com/api/commits?number=4", function(data) {
 					loading = false;
 					var html = "";
 					for (var index = 0; index < data.length; index++) {
@@ -259,21 +203,9 @@
 				});
 			}
 
-			function updateTime() {
-				var now = moment();
-				var days = date.diff(now, "days");
-				var hours = date.diff(now.add("days", days), "hours");
-				var minutes = date.diff(now.add("hours", hours), "minutes");
-				var seconds = date.diff(now.add("minutes", minutes), "seconds");
-
-				document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
-			};
-
-			window.setInterval(updateTime, 1 * 1000);
 			window.setInterval(updateNewsFeed, 30 * 1000);
 
 			updateNewsFeed();
-			updateTime();
 
 		</script>
 
