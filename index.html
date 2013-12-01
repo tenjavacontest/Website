@@ -252,14 +252,13 @@
 						var html = "";
 						for (var index = 0; index < data.length; index++) {
 							commit = data[index];
-							html += "<div class='commit'>";
-							html += ("<p class='left'><img src='http://www.gravatar.com/avatar/" + commit.gravatar_id + "?s=48&d=mm'></p>");
-							html += "<p class='right'>";
+							html += "<div class=\"commit\">";
+							html += ("<p class=\"left\"><img src='http://www.gravatar.com/avatar/" + commit.gravatar_id + "?s=48&d=mm'></p>");
+							html += "<p class=\"right\">";
 							html += ("<a href=\"https://github.com/" + commit.username + "\">" + commit.username + "</a> > <a href=\"https://github.com/tenjavacontest/" + commit.repository + "/\">" + commit.repository + "</a><br />");
 							html += ("\"<a href=\"https://github.com/tenjavacontest/" + commit.repository + "/commit/" + commit.commit_id + "\">" + commit.commit_message + "</a>\"<br />");
 							html += (commit.created_at + "<br />");
-							html += "</p>";
-							html += "</div>";
+							html += "</p></div>";
 						}
 						setTimeout(function() {
 							feed.html(html);
