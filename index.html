@@ -73,7 +73,7 @@
 			#alert > .section {
 				float: left;
 				width: 25%;
-				margin-top: 20px;
+				
 			}
 			
 			.commit {
@@ -239,37 +239,24 @@
 					return;
 				}
 				loading = true;
-				var speed = 250;
 				var feed = $("#newsfeed");
-				if (!firstLoad) {
-					feed.fadeOut(speed);
-				}
-				setTimeout(function() {
-					feed.html("Loading...");
-					feed.fadeIn(speed);
-					$.get("http://tenjava.lol768.com/api/commits?number=4", function(data) {
-						loading = false;
-						feed.fadeOut(speed);
-						var html = "";
-						for (var index = 0; index < data.length; index++) {
-							commit = data[index];
-							html += "<div class=\"commit\">";
-							html += ("<p class=\"left\"><img src='http://www.gravatar.com/avatar/" + commit.gravatar_id + "?s=48&d=mm'></p>");
-							html += "<p class=\"right\">";
-							html += ("<a href=\"https://github.com/tenjavacontest/" + commit.repository + "/\">" + commit.repository + "</a><br />");
-							html += ("\"<a href=\"https://github.com/tenjavacontest/" + commit.repository + "/commit/" + commit.commit_id + "\">" + commit.commit_message + "</a>\"<br />");
-							html += (commit.created_at + "<br />");
-							html += "</p></div>";
-						}
-						setTimeout(function() {
-							feed.html(html);
-							feed.fadeIn(speed);
-						}, speed);
-					});
-				}, speed);
-				if (firstLoad) {
-					firstLoad = false;
-				}
+				feed.html("Loading...");
+				$.get("http://tenjava.lol768.com/api/commits?number=3", function(data) {
+					loading = false;
+					var html = "";
+					for (var index = 0; index < data.length; index++) {
+						commit = data[index];
+						html += "<div class=\"commit\">";
+						html += ("<p class=\"left\"><img src='http://www.gravatar.com/avatar/" + commit.gravatar_id + "?s=48&d=mm'></p>");
+						html += "<p class=\"right\">";
+						html += ("<a href=\"https://github.com/tenjavacontest/" + commit.repository + "/\">" + commit.repository + "</a><br />");
+						html += ("\"<a href=\"https://github.com/tenjavacontest/" + commit.repository + "/commit/" + commit.commit_id + "\">" + commit.commit_message + "</a>\"<br />");
+						html += ("+" + commit.total_additions + "/-" + commit.total_deletions + "<br />");
+						html += (commit.created_at + "<br />");
+						html += "</p></div>";
+					}
+					feed.html(html);
+				});
 			}
 
 			function updateTime() {
