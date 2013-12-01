@@ -27,7 +27,7 @@
 				background: #FFF;
 			}
 
-			div#footer, div#alert {
+			#footer, #alert {
 				padding: 15px 0px;
 				background: rgba(0, 0, 0, 0.4);
 				width: 100%;
@@ -36,11 +36,11 @@
 				left: 0px;
 			}
 
-			div#footer {
+			#footer {
 				bottom: 0px;
 			}
 
-			div#alert {
+			#alert {
 				top: 0px;
 			}
 
@@ -53,7 +53,7 @@
 			}
 
 			.column {
-				width: 20%;
+				width: 25%;
 				min-width: 100px;
 				float: left;
 				display: inline;
@@ -62,18 +62,43 @@
 			}
 
 			.column p {
-				margin-top: 110px;
+				margin-top: 90px;
 				margin-bottom: 80px;
 			}
 
-			div#alert p {
+			#alert p {
 				font-size: 26px;
 			}
 
 			#alert > .section {
 				float: left;
-				width: 20%;
+				width: 25%;
 				margin-top: 20px;
+			}
+			
+			.commit {
+				overflow: auto;
+				margin: 0px 25px 15px 25px;
+			}
+			
+			.commit p {
+				display: inline;
+				margin: 0px !important;
+			}
+			
+			.commit p img {
+				border-radius: 4px;
+				margin-top: 4px;
+			}
+			
+			.right {
+				float: right;
+				text-align: right;
+			}
+			
+			.left {
+				float: left;
+				text-align: left;
 			}
 
 		</style>
@@ -92,12 +117,8 @@
 				1600 UTC Theme: TBA
 			</div>
 
-			<div class="section main">
-				ten.java Plugin Contest
-			</div>
-			
 			<div class="section">
-				0800 GMT Theme: TBA
+				800 UTC Theme: TBA
 			</div>
 
 			<div id="timer" class="section">
@@ -108,7 +129,7 @@
 		
 		<div class="column" style="background: #2ecc71;">
 
-			<p>
+			<p style="margin-bottom: 40px;">
 				<strong>Links</strong><br />
 				<a href="http://github.com/tenjavacontest" target="_blank">Github</a> (tenjavacontest)<br />
 				<a href="http://forums.bukkit.org/threads/ten-java-plugin-contest-irc-esper-net-ten-java-pool-1-315.190553/" target="_blank">Thread</a><br />
@@ -118,23 +139,19 @@
 				<a href="https://docs.google.com/spreadsheet/ccc?key=0AkbN9EcUb__OdHpET0g3SlA5YTJpeVhiSDZiSGJHYVE&usp=sharing" target="_blank">Judging Spreadsheet</a><br />
 				<a href="https://docs.google.com/document/d/1Cr4XjwPSWsUd4f0SF4Mp4EQ8TVSZJkzBDtdrSsl-w3o/edit?usp=sharing" target="_blank">Rules</a>
 			</p>
-
-		</div>
-
-		<div class="column" style="background: #2980b9;">
-
-			<p>
+			
+			<p style="margin-top: 0px;">
 				<strong>Overview</strong><br />
 				Points: 4,489<br />
 				Date: December 7th 2013<br />
-				Time: <a href="http://www.timeanddate.com/worldclock/fixedtime.html?msg=ten.java&iso=20131207T16&p1=136&ah=10">1600 UTC</a> & 0800 GMT<br />
+				Time: <a href="http://www.timeanddate.com/worldclock/fixedtime.html?msg=ten.java&iso=20131207T16&p1=136&ah=10">1600 UTC</a> & <a href="http://www.timeanddate.com/worldclock/fixedtime.html?msg=ten.java&iso=20131207T08&p1=136&ah=10">800 UTC</a><br />
 				Participants: 70<br />
 				Judges: 6
 			</p>
 
 		</div>
 
-		<div class="column" style="background: #8e44ad;">
+		<div class="column" style="background: #2980b9;">
 
 			<p id="donors">
 				<strong>Donors</strong><br />
@@ -194,13 +211,9 @@
 		<div class="column" style="background: #c0392b;">
 
 			<p>
-				<strong>Judges</strong><br />
-				toothplck1<br />
-				drtshock<br />
-				lol768<br />
-				gomeow<br />
-				nkrecklow<br />
-				hawkfalcon
+				<strong>News Feed</strong><br />
+				<a href="javascript:void(0);" onclick="updateNewsFeed();">Refresh</a><br /><br />
+				<span id="newsfeed">Loading...</span>
 			</p>
 
 		</div>
@@ -212,10 +225,52 @@
 		</div>
 
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
 		<script type="text/javascript">
 
 			var date = moment("December 7 2013");
+			var firstLoad = true;
+			var loading = false;
+
+			function updateNewsFeed() {
+				if (loading) {
+					return;
+				}
+				loading = true;
+				var speed = 250;
+				var feed = $("#newsfeed");
+				if (!firstLoad) {
+					feed.fadeOut(speed);
+				}
+				setTimeout(function() {
+					feed.html("Loading...");
+					feed.fadeIn(speed);
+					$.get("http://tenjava.lol768.com/api/commits?number=4", function(data) {
+						loading = false;
+						feed.fadeOut(speed);
+						var html = "";
+						for (var index = 0; index < data.length; index++) {
+							commit = data[index];
+							html += "<div class='commit'>";
+							html += ("<p class='left'><img src='http://www.gravatar.com/avatar/" + commit.gravatar_id + "?s=48&d=mm'></p>");
+							html += "<p class='right'>";
+							html += ("<a href=\"https://github.com/" + commit.username + "\">" + commit.username + "</a> > <a href=\"https://github.com/tenjavacontest/" + commit.repository + "/\">" + commit.repository + "</a><br />");
+							html += ("\"<a href=\"https://github.com/tenjavacontest/" + commit.repository + "/commit/" + commit.commit_id + "\">" + commit.commit_message + "</a>\"<br />");
+							html += (commit.created_at + "<br />");
+							html += "</p>";
+							html += "</div>";
+						}
+						setTimeout(function() {
+							feed.html(html);
+							feed.fadeIn(speed);
+						}, speed);
+					});
+				}, speed);
+				if (firstLoad) {
+					firstLoad = false;
+				}
+			}
 
 			function updateTime() {
 				var now = moment();
@@ -227,8 +282,10 @@
 				document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
 			};
 
-			window.setInterval(updateTime, 1000);
+			window.setInterval(updateTime, 1 * 1000);
+			window.setInterval(updateNewsFeed, 30 * 1000);
 
+			updateNewsFeed();
 			updateTime();
 
 		</script>
