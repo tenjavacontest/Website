@@ -28,7 +28,6 @@ $json = new JSONManager("information");
                 <a href="https://twitter.com/tenjava">Twitter</a> (@tenjava)</a><br />
                 <a href="http://webchat.esper.net/?nick=tenjava...&channels=ten.java&prompt=1" target="_blank">IRC</a> (irc.esper.net #ten.java)<br />
                 <a href="https://docs.google.com/document/d/1vBadA687VEPMtj_tI6aEFV_0cQzwz15jF0SHqbf-fKk/edit" target="_blank">Maven Tutorial</a><br />
-                <a href="https://docs.google.com/spreadsheet/ccc?key=0AkbN9EcUb__OdHpET0g3SlA5YTJpeVhiSDZiSGJHYVE&usp=sharing" target="_blank">Judging Spreadsheet</a><br />
                 <a href="https://docs.google.com/document/d/1Cr4XjwPSWsUd4f0SF4Mp4EQ8TVSZJkzBDtdrSsl-w3o/edit?usp=sharing" target="_blank">Rules</a>
             </p>
             <p style="margin-top: 0px;">
