@@ -36,7 +36,7 @@ $json = new JSONManager("information");
                 Date: December 7th 2013<br />
                 Time: <a href="http://www.timeanddate.com/worldclock/fixedtime.html?msg=ten.java&iso=20131207T16&p1=136&ah=10">1600 UTC</a> & <a href="http://www.timeanddate.com/worldclock/fixedtime.html?msg=ten.java&iso=20131207T08&p1=136&ah=10">0800 UTC</a><br />
                 Participants: 80<br />
-                Judges: 6
+                Judges: 7
             </p>
         </div>
         <div class="column" style="background: #1abc9c;">
