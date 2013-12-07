@@ -24,10 +24,5 @@
         public function getDonators() {
             return $this->donators;
         }
-        
-        public function appendListItem(&$original, $string) {
-            $original .= "<li>$string</li>";
-        }
-
     }
 ?>

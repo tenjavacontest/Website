@@ -54,9 +54,9 @@
                 <?php
                     $start = "";
                     foreach ($json->getStreams() as $key => $stream) {
-                        $json->appendListItem($start, "<a href=\"" . $stream["link"] . "\" target=\"_blank\">" . $key . "</a>");
+                        $start .= "<a href=\"" . $stream["link"] . "\" target=\"_blank\">" . $key . "</a><br />";
                     }
-                    echo $start;
+                    echo substr($start, 0, strlen($start) - strlen("<br />"));
                 ?>
             </p>
         </div>
@@ -66,9 +66,9 @@
                 <?php
                     $start = "";
                     foreach ($json->getDonators() as $key => $donator) {
-                        $json->appendListItem($start, "$key: $donator");
+                        $start .= "$key: $donator<br />";
                     }
-                    echo $start;
+                    echo substr($start, 0, strlen($start) - strlen("<br />"));
                 ?>
             </p>
         </div>
