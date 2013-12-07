@@ -26,7 +26,7 @@
         }
         
         public function appendListItem(&$original, $string) {
-            $original = $original . "<li>$string</li>";
+            $original .= "<li>$string</li>";
         }
 
     }
