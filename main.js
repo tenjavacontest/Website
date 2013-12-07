@@ -17,7 +17,7 @@ function updateNewsFeed() {
 
     feed.html("Loading...");
 
-    $.get("http://tenjava.lol768.com/api/commits?number=4", function(data) {
+    $.get("http://tenjava.lol768.com/api/commits?number=5", function(data) {
         loading = false;
         var html = "";
 
