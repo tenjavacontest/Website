@@ -52,28 +52,23 @@
             <p>
                 <strong>Streams</strong><br />
                 <?php
-                    echo "<ul>";
                     $start = "";
                     foreach ($json->getStreams() as $key => $stream) {
                         $json->appendListItem($start, "<a href=\"" . $stream["link"] . "\" target=\"_blank\">" . $key . "</a>");
                     }
                     echo $start;
-                    echo "</ul>";
                 ?>
             </p>
-
         </div>
         <div class="column" style="background: #f1c40f;">
-            <p id="donors">
+            <p>
                 <strong>Donators</strong><br />
                 <?php
-                    echo "<ul>";
                     $start = "";
                     foreach ($json->getDonators() as $key => $donator) {
                         $json->appendListItem($start, "$key: $donator");
                     }
                     echo $start;
-                    echo "</ul>";
                 ?>
             </p>
         </div>
