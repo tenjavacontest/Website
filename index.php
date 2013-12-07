@@ -1,10 +1,11 @@
 <?php
-error_reporting(-1);
-ini_set("display_errors", 1);
-include_once("JSONManager.php");
+    include_once("JSONManager.php");
 
-$json = new JSONManager("information");
+    $json = new JSONManager("information");
 ?>
+
+<!DOCTYPE HTML>
+
 <html>
     <head>
         <title>ten.java Plugin Contest</title>
@@ -13,11 +14,12 @@ $json = new JSONManager("information");
         <link href="style.css" rel="stylesheet" media="screen" />
         <!--[if !IE 7]>
             <style type="text/css">
-                #wrap {display:table;height:100%}
+                #wrap {
+                    display: table;
+                    height: 100%
+                }
             </style>
         <!--[endif]-->
-        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-        <script src="main.js"></script>
     </head>
     <body>
         <div class="column" style="background: #328F97;">
@@ -50,13 +52,13 @@ $json = new JSONManager("information");
             <p>
                 <strong>Streams</strong><br />
                 <?php
-                echo "<ul>";
-                $start = "";
-                foreach ($json->getStreams() as $key => $stream) {
-                    $json->appendListItem($start, "<a href=\"" . $stream["link"] . "\" target=\"_blank\">" . $key . "</a>");
-                }
-                echo $start;
-                echo "</ul>";
+                    echo "<ul>";
+                    $start = "";
+                    foreach ($json->getStreams() as $key => $stream) {
+                        $json->appendListItem($start, "<a href=\"" . $stream["link"] . "\" target=\"_blank\">" . $key . "</a>");
+                    }
+                    echo $start;
+                    echo "</ul>";
                 ?>
             </p>
 
@@ -65,19 +67,22 @@ $json = new JSONManager("information");
             <p id="donors">
                 <strong>Donators</strong><br />
                 <?php
-                echo "<ul>";
-                $start = "";
-                foreach ($json->getDonators() as $key => $donator) {
-                    $json->appendListItem($start, "$key: $donator");
-                }
-                echo $start;
-                echo "</ul>";
+                    echo "<ul>";
+                    $start = "";
+                    foreach ($json->getDonators() as $key => $donator) {
+                        $json->appendListItem($start, "$key: $donator");
+                    }
+                    echo $start;
+                    echo "</ul>";
                 ?>
             </p>
         </div>
         <div id="footer">
             Thanks to all the wonderful people who are making this contest possible!
         </div>
+
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="main.js"></script>
     </body>
 
 </html>
