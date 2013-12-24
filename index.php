@@ -30,15 +30,19 @@
                 <a href="https://twitter.com/tenjava">Twitter</a> (@tenjava)</a><br />
                 <a href="http://webchat.esper.net/?nick=tenjava...&channels=ten.java&prompt=1" target="_blank">IRC</a> (irc.esper.net #ten.java)<br />
                 <a href="https://docs.google.com/document/d/1vBadA687VEPMtj_tI6aEFV_0cQzwz15jF0SHqbf-fKk/edit" target="_blank">Maven Tutorial</a><br />
-                <a href="https://docs.google.com/document/d/1Cr4XjwPSWsUd4f0SF4Mp4EQ8TVSZJkzBDtdrSsl-w3o/edit?usp=sharing" target="_blank">Rules</a>
+                <a href="https://docs.google.com/document/d/1Cr4XjwPSWsUd4f0SF4Mp4EQ8TVSZJkzBDtdrSsl-w3o/edit?usp=sharing" target="_blank">Rules</a><br />
             </p>
-            <p style="margin-top: 0px;">
+            <p style="margin-bottom: 40px;">
                 <strong>Overview</strong><br />
                 Points: 4,644<br />
                 Date: December 7th 2013<br />
                 Time: <a href="http://www.timeanddate.com/worldclock/fixedtime.html?msg=ten.java&iso=20131207T16&p1=136&ah=10">1600 UTC</a> & <a href="http://www.timeanddate.com/worldclock/fixedtime.html?msg=ten.java&iso=20131207T08&p1=136&ah=10">0800 UTC</a><br />
                 Participants: 80<br />
                 Judges: 7
+            </p>
+            <p style="margin-bottom: 40px;">
+                <strong>Results</strong><br />
+                <a href="http://tenjava.lol768.com/results/">2013</a>
             </p>
         </div>
         <div class="column" style="background: #1abc9c;">
